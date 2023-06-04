@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="repository.vehiculoRepository.VehiculoRepositoryImplTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-06-04T11:36:27" hostname="LAPTOPAMEBA" time="0.202">
+  <properties/>
+  <testcase name="delete()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.052"/>
+  <testcase name="findAll()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.008"/>
+  <testcase name="update()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.014"/>
+  <testcase name="findById()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.011"/>
+  <testcase name="save()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.012"/>
+  <testcase name="findByDniPropietario()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.01"/>
+  <testcase name="findByModelo()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.008"/>
+  <testcase name="findByMatricula()" classname="repository.vehiculoRepository.VehiculoRepositoryImplTest" time="0.009"/>
+  <system-out><![CDATA[/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.488 [Test worker] INFO db.DatabaseManager - Inicializando DatabaseManager
+13:36:27.494 [Test worker] INFO db.DatabaseManager - Eliminando tablas
+13:36:27.598 [Test worker] INFO db.DatabaseManager - Tablas eliminadas
+13:36:27.600 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.612 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.623 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.631 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.635 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.637 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.638 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.644 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.645 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.646 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+13:36:27.648 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.652 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.652 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: DELETE FROM vehiculo WHERE id = ? con parámetros: [1]
+13:36:27.657 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.658 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.659 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+13:36:27.659 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.669 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.678 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.679 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.680 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.680 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.681 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.681 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.684 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.686 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.686 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.686 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.689 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.698 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.699 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.699 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.700 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.701 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.701 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.705 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.706 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.706 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+13:36:27.707 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.708 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.708 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: UPDATE vehiculo SET marca = ?, modelo = ?, matricula = ?, fecha_matriculacion = ?, fecha_ultima_revision = ?, dni_propietario = ? WHERE id = ? con parámetros: [Seat, Ibiza, MAR223, 2019-01-01, 2020-01-01, 12345678B, 1]
+13:36:27.711 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.712 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.713 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+13:36:27.713 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.716 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.723 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.725 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.725 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.726 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.727 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.728 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.732 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.734 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.734 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+13:36:27.735 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.737 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.747 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.748 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.748 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.748 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.750 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.751 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.756 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.758 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.758 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+13:36:27.759 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.761 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.769 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.770 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.771 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.771 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.773 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.773 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.776 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.777 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.778 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE dni_propietario = ? con parámetros: [12345678A]
+13:36:27.778 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.781 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.788 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.789 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.789 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.790 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.791 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.791 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.795 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.796 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.796 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE modelo = ? con parámetros: [Ibiza]
+13:36:27.797 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
+13:36:27.799 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+13:36:27.806 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+13:36:27.807 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+13:36:27.807 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+13:36:27.808 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.809 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.809 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+13:36:27.813 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+13:36:27.815 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+13:36:27.815 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE matricula = ? con parámetros: [2346JUT]
+13:36:27.816 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

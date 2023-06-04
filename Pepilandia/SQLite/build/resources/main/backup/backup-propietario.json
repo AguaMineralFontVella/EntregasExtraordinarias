@@ -1,0 +1,37 @@
+[
+    {
+        "Id": 1,
+        "DNI": "12345678P",
+        "Nombre": "John",
+        "Apellidos": "Doe",
+        "Teléfono": "123456789"
+    },
+    {
+        "Id": 2,
+        "DNI": "45678901J",
+        "Nombre": "Jane",
+        "Apellidos": "Smith",
+        "Teléfono": "987654321"
+    },
+    {
+        "Id": 3,
+        "DNI": "65498732R",
+        "Nombre": "Michael",
+        "Apellidos": "Johnson",
+        "Teléfono": "654321987"
+    },
+    {
+        "Id": 4,
+        "DNI": "98712345Z",
+        "Nombre": "Emily",
+        "Apellidos": "Davis",
+        "Teléfono": "321654987"
+    },
+    {
+        "Id": 5,
+        "DNI": "78932165K",
+        "Nombre": "David",
+        "Apellidos": "Wilson",
+        "Teléfono": "789123456"
+    }
+]

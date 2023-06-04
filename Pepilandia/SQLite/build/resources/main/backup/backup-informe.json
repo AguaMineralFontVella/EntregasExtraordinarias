@@ -1,0 +1,86 @@
+[
+    {
+        "Id": 1,
+        "Frenado": 2.0,
+        "Frenado_is_apto": false,
+        "Contaminación": 30.0,
+        "Luces_is_apto": true,
+        "Id_Cita": 0,
+        "Id_Trabajador": 2,
+        "Id_Vehículo": 4,
+        "DNI_Propietario": "45678901J",
+        "Is_favorable": 0
+    },
+    {
+        "Id": 2,
+        "Frenado": 5.0,
+        "Frenado_is_apto": false,
+        "Contaminación": 30.0,
+        "Luces_is_apto": true,
+        "Id_Cita": 0,
+        "Id_Trabajador": 2,
+        "Id_Vehículo": 14,
+        "DNI_Propietario": "78932165K",
+        "Is_favorable": 0
+    },
+    {
+        "Id": 3,
+        "Frenado": 10.0,
+        "Frenado_is_apto": false,
+        "Contaminación": 33.0,
+        "Luces_is_apto": true,
+        "Id_Cita": 0,
+        "Id_Trabajador": 4,
+        "Id_Vehículo": 5,
+        "DNI_Propietario": "45678901J",
+        "Is_favorable": 1
+    },
+    {
+        "Id": 4,
+        "Frenado": 7.0,
+        "Frenado_is_apto": true,
+        "Contaminación": 50.0,
+        "Luces_is_apto": true,
+        "Id_Cita": 0,
+        "Id_Trabajador": 1,
+        "Id_Vehículo": 9,
+        "DNI_Propietario": "65498732R",
+        "Is_favorable": 0
+    },
+    {
+        "Id": 5,
+        "Frenado": 8.0,
+        "Frenado_is_apto": false,
+        "Contaminación": 22.0,
+        "Luces_is_apto": false,
+        "Id_Cita": 0,
+        "Id_Trabajador": 1,
+        "Id_Vehículo": 8,
+        "DNI_Propietario": "65498732R",
+        "Is_favorable": 1
+    },
+    {
+        "Id": 6,
+        "Frenado": 4.0,
+        "Frenado_is_apto": false,
+        "Contaminación": 37.0,
+        "Luces_is_apto": true,
+        "Id_Cita": 0,
+        "Id_Trabajador": 2,
+        "Id_Vehículo": 7,
+        "DNI_Propietario": "65498732R",
+        "Is_favorable": 0
+    },
+    {
+        "Id": 7,
+        "Frenado": 3.0,
+        "Frenado_is_apto": true,
+        "Contaminación": 35.0,
+        "Luces_is_apto": true,
+        "Id_Cita": 0,
+        "Id_Trabajador": 1,
+        "Id_Vehículo": 11,
+        "DNI_Propietario": "98712345Z",
+        "Is_favorable": 1
+    }
+]

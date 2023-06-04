@@ -1,0 +1,51 @@
+[
+    {
+        "Id_Cita": 1,
+        "Id_Trabajador": "2",
+        "Id_Vehículo": "4",
+        "Fecha": "2023-06-04",
+        "Hora": "14:17"
+    },
+    {
+        "Id_Cita": 2,
+        "Id_Trabajador": "2",
+        "Id_Vehículo": "14",
+        "Fecha": "2023-06-04",
+        "Hora": "14:01"
+    },
+    {
+        "Id_Cita": 3,
+        "Id_Trabajador": "4",
+        "Id_Vehículo": "5",
+        "Fecha": "2023-06-04",
+        "Hora": "14:04"
+    },
+    {
+        "Id_Cita": 4,
+        "Id_Trabajador": "1",
+        "Id_Vehículo": "9",
+        "Fecha": "2023-06-04",
+        "Hora": "13:58"
+    },
+    {
+        "Id_Cita": 5,
+        "Id_Trabajador": "1",
+        "Id_Vehículo": "8",
+        "Fecha": "2023-06-04",
+        "Hora": "13:56"
+    },
+    {
+        "Id_Cita": 6,
+        "Id_Trabajador": "2",
+        "Id_Vehículo": "7",
+        "Fecha": "2023-06-04",
+        "Hora": "13:59"
+    },
+    {
+        "Id_Cita": 7,
+        "Id_Trabajador": "1",
+        "Id_Vehículo": "11",
+        "Fecha": "2023-06-04",
+        "Hora": "14:18"
+    }
+]

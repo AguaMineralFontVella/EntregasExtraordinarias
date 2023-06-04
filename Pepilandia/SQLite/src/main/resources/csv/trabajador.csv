@@ -1,0 +1,6 @@
+id;nombre;telefono;email;nombreUsuario;password;especialidad;isResponsable;salario;fecha_contratacion
+1;Mark Johnson;789012345;mark@gmail.com;JhonMrk002;password123;MOTOR;false;0;2020-12-20
+2;Sarah Thompson;012345678;sarah@gmail.com;ThomRah22;password456;ELECTRICIDAD;true;0;2018-05-10
+3;Robert Davis;987654321;robert@gmail.com;Robertico;password789;MECANICA;false;0;2019-09-15
+4;Jennifer Wilson;456789012;jennifer@gmail.com;Jenni33;passwordabc;INTERIOR;false;0;2021-03-20
+5;Daniel Smith;654321987;daniel@gmail.com;Danielsmith48;passwordxyz;MOTOR;false;0;2017-05-21

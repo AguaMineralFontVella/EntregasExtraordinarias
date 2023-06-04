@@ -1,0 +1,62 @@
+[
+    {
+        "Id": 1,
+        "Nombre": "Mark Johnson",
+        "Teléfono": "789012345",
+        "Email": "mark@gmail.com",
+        "Nombre_Usuario": "JhonMrk002",
+        "Contraseña": "[B@635eaaf1",
+        "Especialidad": "MOTOR",
+        "Is_responsable": 0,
+        "Salario": 1800.0,
+        "Fecha_contratación": "2020-12-20"
+    },
+    {
+        "Id": 2,
+        "Nombre": "Sarah Thompson",
+        "Teléfono": "012345678",
+        "Email": "sarah@gmail.com",
+        "Nombre_Usuario": "ThomRah22",
+        "Contraseña": "[B@647e447",
+        "Especialidad": "ELECTRICIDAD",
+        "Is_responsable": 1,
+        "Salario": 2900.0,
+        "Fecha_contratación": "2018-05-10"
+    },
+    {
+        "Id": 3,
+        "Nombre": "Robert Davis",
+        "Teléfono": "987654321",
+        "Email": "robert@gmail.com",
+        "Nombre_Usuario": "Robertico",
+        "Contraseña": "[B@35ef1869",
+        "Especialidad": "MECANICA",
+        "Is_responsable": 0,
+        "Salario": 1700.0,
+        "Fecha_contratación": "2019-09-15"
+    },
+    {
+        "Id": 4,
+        "Nombre": "Jennifer Wilson",
+        "Teléfono": "456789012",
+        "Email": "jennifer@gmail.com",
+        "Nombre_Usuario": "Jenni33",
+        "Contraseña": "[B@c33b74f",
+        "Especialidad": "INTERIOR",
+        "Is_responsable": 0,
+        "Salario": 1750.0,
+        "Fecha_contratación": "2021-03-20"
+    },
+    {
+        "Id": 5,
+        "Nombre": "Daniel Smith",
+        "Teléfono": "654321987",
+        "Email": "daniel@gmail.com",
+        "Nombre_Usuario": "Danielsmith48",
+        "Contraseña": "[B@130161f7",
+        "Especialidad": "MOTOR",
+        "Is_responsable": 0,
+        "Salario": 1900.0,
+        "Fecha_contratación": "2017-05-21"
+    }
+]
