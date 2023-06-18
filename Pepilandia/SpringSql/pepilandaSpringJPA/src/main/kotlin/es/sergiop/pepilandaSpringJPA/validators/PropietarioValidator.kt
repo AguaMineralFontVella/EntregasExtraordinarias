@@ -7,6 +7,11 @@ import es.sergiop.pepilandaSpringJPA.exceptions.PropietarioException
 import es.sergiop.pepilandaSpringJPA.models.Propietario
 import mu.KotlinLogging
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
 /**

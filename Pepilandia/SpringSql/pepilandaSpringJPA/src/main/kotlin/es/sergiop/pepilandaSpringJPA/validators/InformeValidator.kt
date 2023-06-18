@@ -7,8 +7,18 @@ import es.sergiop.pepilandaSpringJPA.exceptions.InformeException
 import es.sergiop.pepilandaSpringJPA.models.Informe
 import mu.KotlinLogging
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
+/**
+ * Función que valida un informe
+ * @receiver Informe a validar
+ * @return Resultado de la validación
+ */
 fun Informe.validar(): Result<Informe, InformeException> {
     logger.debug { "validar: $this" }
     return when {

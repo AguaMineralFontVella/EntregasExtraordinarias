@@ -23,8 +23,16 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 import java.time.LocalDate
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
+/**
+ * Controlador de la entidad Trabajador
+ */
 @RestController
 @RequestMapping(ApiConfig.API_PATH + "/trabajadores")
 class TrabajadorController
@@ -32,6 +40,10 @@ class TrabajadorController
     private val trabajadorService: TrabajadorServiceImpl
 ) {
 
+    /**
+     * Función que devuelve todos los trabajadores
+     * @return ResponseEntity<List<TrabajadorDto>>
+     */
     @GetMapping("")
     suspend fun findAll() : ResponseEntity<List<TrabajadorDto>> {
         logger.info { "TrabajadorController - findAll()" }
@@ -43,6 +55,11 @@ class TrabajadorController
         return ResponseEntity.ok(res)
     }
 
+    /**
+     * Función que calcula el salario de un trabajador
+     * @param trabajador: Trabajador
+     * @return Double
+     */
     @GetMapping("{id}")
     suspend fun findById(@PathVariable id: Long) : ResponseEntity<TrabajadorDto> {
         logger.info { "TrabajadorController - findTrabajadorById() with id: $id" }
@@ -58,6 +75,11 @@ class TrabajadorController
         }
     }
 
+    /**
+     * Función que calcula el salario de un trabajador
+     * @param trabajador: Trabajador
+     * @return Double
+     */
     @GetMapping("consultas")
     suspend fun doConsultas() : ResponseEntity<String> {
         logger.info { "TrabajadorController - doConsultas()" }
@@ -82,6 +104,11 @@ class TrabajadorController
         return ResponseEntity.ok(consulta)
     }
 
+    /**
+     * Función que calcula el salario de un trabajador
+     * @param trabajador: Trabajador
+     * @return Double
+     */
     @PostMapping("")
     suspend fun create(@RequestBody trabajadorCreateDto: TrabajadorCreateDto) : ResponseEntity<TrabajadorDto> {
         logger.info { "TrabajadorController - saveTrabajador() Trabajador: $trabajadorCreateDto" }
@@ -101,6 +128,11 @@ class TrabajadorController
         }
     }
 
+    /**
+     * Función que calcula el salario de un trabajador
+     * @param trabajador: Trabajador
+     * @return Double
+     */
     @PutMapping("{id}")
     suspend fun update(@PathVariable id: Long, @RequestBody trabajadorDto: TrabajadorDto) : ResponseEntity<TrabajadorDto> {
         logger.info { "TrabajadorController - updateTrabajador() Trabajador: $trabajadorDto" }
@@ -121,6 +153,11 @@ class TrabajadorController
         }
     }
 
+    /**
+     * Función que calcula el salario de un trabajador
+     * @param trabajador: Trabajador
+     * @return Double
+     */
     @DeleteMapping("{id}")
     suspend fun delete(@PathVariable id: Long) : ResponseEntity<Boolean> {
         logger.info { "TrabajadorController - deleteTrabajador() with id: $id" }
@@ -133,6 +170,11 @@ class TrabajadorController
         }
     }
 
+    /**
+     * Función que calcula el salario de un trabajador
+     * @param trabajador: Trabajador
+     * @return Double
+     */
     private suspend fun calcularSalario(trabajador: Trabajador): Double{
         if (trabajador.salario > 0.00){
             return trabajador.salario

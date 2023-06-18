@@ -7,8 +7,17 @@ import es.sergiop.pepilandaSpringJPA.exceptions.VehiculoException
 import es.sergiop.pepilandaSpringJPA.models.Vehiculo
 import mu.KotlinLogging
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
+/**
+ * Función que valida un vehiculo
+ * @return Resultado de la validación
+ */
 fun Vehiculo.validar(): Result<Vehiculo, VehiculoException.NoValido> {
     logger.debug { "validar: $this" }
     return when {

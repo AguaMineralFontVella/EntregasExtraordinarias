@@ -5,6 +5,15 @@ import es.sergiop.pepilandaSpringJPA.dto.VehiculoDto
 import es.sergiop.pepilandaSpringJPA.models.Vehiculo
 import java.time.LocalDate
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
+/**
+ * Funcion para convertir un Vehiculo a un VehiculoDto
+ * @return VehiculoDto
+ */
 fun Vehiculo.toVehiculoDto(): VehiculoDto{
     return VehiculoDto(
         id = id,
@@ -17,6 +26,10 @@ fun Vehiculo.toVehiculoDto(): VehiculoDto{
     )
 }
 
+/**
+ * Funcion para convertir un VehiculoDto a un Vehiculo
+ * @return Vehiculo
+ */
 fun VehiculoDto.toVehiculo(): Vehiculo{
     return Vehiculo(
         id = id,
@@ -29,6 +42,10 @@ fun VehiculoDto.toVehiculo(): Vehiculo{
     )
 }
 
+/**
+ * Funcion para convertir un VehiculoCreateDto a un Vehiculo
+ * @return Vehiculo
+ */
 fun VehiculoCreateDto.toVehiculo(): Vehiculo{
     return Vehiculo(
         marca = marca,

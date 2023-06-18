@@ -8,6 +8,11 @@ import es.sergiop.pepilandaSpringJPA.models.Trabajador
 import mu.KotlinLogging
 import java.time.LocalDate
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
 /**

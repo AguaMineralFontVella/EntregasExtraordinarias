@@ -1,5 +1,13 @@
 package es.sergiop.pepilandaSpringJPA.dto
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
+/**
+ * Objeto InformeDTO para la transmisión de datos
+ */
 data class InformeDto(
     val id : Long?,
     val frenado: String,
@@ -13,6 +21,9 @@ data class InformeDto(
     val isFavorable: String
 )
 
+/**
+ * Objeto InformeCreateDTO para la creación de informes desde la API
+ */
 data class InformeCreateDto(
     val frenado: String,
     val frenadoIsApto: String,

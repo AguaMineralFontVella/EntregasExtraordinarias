@@ -6,7 +6,6 @@ import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import es.sergiop.pepilandaSpringJPA.exceptions.CitaException
 import es.sergiop.pepilandaSpringJPA.models.Cita
-import java.time.LocalDate
 
 /**
  * @author Sergio Pérez Fernández

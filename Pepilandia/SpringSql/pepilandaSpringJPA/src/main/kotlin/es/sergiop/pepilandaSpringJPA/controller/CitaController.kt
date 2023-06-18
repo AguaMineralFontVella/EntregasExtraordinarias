@@ -19,8 +19,16 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
+/**
+ * Controlador de la entidad Cita
+ */
 @RestController
 @RequestMapping(ApiConfig.API_PATH + "/citas")
 class CitaController
@@ -34,6 +42,10 @@ class CitaController
     var countTrabajador4 = 0
     var countTrabajador5 = 0
 
+    /**
+     * Función que devuelve todas las citas de la base de datos
+     * @return ResponseEntity<List<CitaDto>>
+     */
     @GetMapping("")
     suspend fun findAll() : ResponseEntity<List<CitaDto>> {
         logger.info { "CitaController - findAll()" }
@@ -41,6 +53,11 @@ class CitaController
         return ResponseEntity.ok(res)
     }
 
+    /**
+     * Función que devuelve una cita de la base de datos a partir de su id
+     * @param id: Long
+     * @return ResponseEntity<CitaDto>
+     */
     @GetMapping("{id}")
     suspend fun findById(@PathVariable id: Long) : ResponseEntity<CitaDto> {
         logger.info { "CitaController - findCitaById() with id: $id" }
@@ -53,6 +70,11 @@ class CitaController
         }
     }
 
+    /**
+     * Función que crea una cita en la base de datos y comprueba que no se superen los 8 registros por intervalo (4 por trabajador)
+     * @param citaCreateDto: CitaCreateDto
+     * @return ResponseEntity<CitaDto>
+     */
     @PostMapping("")
     suspend fun create(@Valid @RequestBody citaCreateDto: CitaCreateDto) : ResponseEntity<CitaDto> {
         logger.info { "CitaController - saveCita() Cita: $citaCreateDto" }
@@ -168,6 +190,12 @@ class CitaController
         }
     }
 
+    /**
+     * Función que actualiza una cita en la base de datos
+     * @param id: Long
+     * @param citaDto: CitaDto
+     * @return ResponseEntity<CitaDto>
+     */
     @PutMapping("{id}")
     suspend fun update(@PathVariable id: Long, @Valid @RequestBody citaDto: CitaDto) : ResponseEntity<CitaDto> {
         logger.info { "CitaController - updateCita() Cita: $citaDto" }
@@ -185,6 +213,11 @@ class CitaController
         }
     }
 
+    /**
+     * Función que elimina una cita de la base de datos
+     * @param id: Long
+     * @return ResponseEntity<Boolean>
+     */
     @DeleteMapping("{id}")
     suspend fun delete(@PathVariable id: Long) : ResponseEntity<Boolean> {
         logger.info { "CitaController - deleteCita() with id: $id" }

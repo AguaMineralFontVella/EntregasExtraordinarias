@@ -19,15 +19,28 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
+
+/**
+ * Controlador de la entidad Informe
+ */
 
 @RestController
 @RequestMapping(ApiConfig.API_PATH + "/informes")
 class InformeController
     @Autowired constructor (
         private val informeService: InformeServiceImpl
-    ) {
+) {
 
+    /**
+     * Función que devuelve todos los informes
+     * @return ResponseEntity<List<InformeDto>>
+     */
     @GetMapping("")
     suspend fun findAll() : ResponseEntity<List<InformeDto>> {
         logger.info { "InformeController - findAll()" }
@@ -35,6 +48,11 @@ class InformeController
         return ResponseEntity.ok(res)
     }
 
+    /**
+     * Función que devuelve un informe por su id
+     * @param id: Long
+     * @return ResponseEntity<InformeDto>
+     */
     @GetMapping("{id}")
     suspend fun findById(@PathVariable id: Long): ResponseEntity<InformeDto> {
         logger.info { "InformeController - findInformeById() with id: $id" }
@@ -47,6 +65,11 @@ class InformeController
         }
     }
 
+    /**
+     * Función que crea un informe
+     * @param informeCreateDto: InformeCreateDto
+     * @return ResponseEntity<InformeDto>
+     */
     @PostMapping("")
     suspend fun create(@Valid @RequestBody informeCreateDto: InformeCreateDto) : ResponseEntity<InformeDto> {
         logger.info { "InformeController - saveInforme() Informe: $informeCreateDto" }
@@ -62,6 +85,12 @@ class InformeController
         }
     }
 
+    /**
+     * Función que actualiza un informe
+     * @param id: Long
+     * @param informeCreateDto: InformeCreateDto
+     * @return ResponseEntity<InformeDto>
+     */
     @PutMapping("{id}")
     suspend fun update(@PathVariable id: Long, @Valid @RequestBody informeCreateDto: InformeCreateDto) : ResponseEntity<InformeDto> {
         logger.info { "InformeController - updateInforme() with id: $id" }
@@ -79,6 +108,11 @@ class InformeController
         }
     }
 
+    /**
+     * Función que elimina un informe
+     * @param id: Long
+     * @return ResponseEntity<Unit>
+     */
     @DeleteMapping("{id}")
     suspend fun delete(@PathVariable id: Long) : ResponseEntity<Unit> {
         logger.info { "InformeController - deleteInforme() with id: $id" }

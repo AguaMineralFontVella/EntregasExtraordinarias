@@ -19,8 +19,16 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
+/**
+ * Controlador de la entidad Vehiculo
+ */
 @RestController
 @RequestMapping(ApiConfig.API_PATH + "/vehiculos")
 class VehiculoController
@@ -28,6 +36,10 @@ class VehiculoController
     private val vehiculoService: VehiculoServiceImpl
 ) {
 
+    /**
+     * Función que devuelve todos los vehiculos
+     * @return ResponseEntity<List<VehiculoDto>>
+     */
     @GetMapping("")
     suspend fun findAll() : ResponseEntity<List<VehiculoDto>> {
         logger.info { "VehiculoController - findAll()" }
@@ -35,6 +47,11 @@ class VehiculoController
         return ResponseEntity.ok(res)
     }
 
+    /**
+     * Función que devuelve un vehiculo por su id
+     * @param id: Long
+     * @return ResponseEntity<VehiculoDto>
+     */
     @GetMapping("{id}")
     suspend fun findById(@PathVariable id: Long) : ResponseEntity<VehiculoDto> {
         logger.info { "VehiculoController - findVehiculoById() with id: $id" }
@@ -47,6 +64,11 @@ class VehiculoController
         }
     }
 
+    /**
+     * Función que crea un vehiculo
+     * @param vehiculoCreateDto: VehiculoCreateDto
+     * @return ResponseEntity<VehiculoDto>
+     */
     @PostMapping("")
     suspend fun create(@Valid @RequestBody vehiculoCreateDto: VehiculoCreateDto) : ResponseEntity<VehiculoDto> {
         logger.info { "VehiculoController - saveVehiculo() Vehiculo: $vehiculoCreateDto" }
@@ -62,6 +84,12 @@ class VehiculoController
         }
     }
 
+    /**
+     * Función que actualiza un vehiculo
+     * @param id: Long
+     * @param vehiculoDto: VehiculoDto
+     * @return ResponseEntity<VehiculoDto>
+     */
     @PutMapping("{id}")
     suspend fun update(@PathVariable id: Long, @Valid @RequestBody vehiculoDto: VehiculoDto) : ResponseEntity<VehiculoDto> {
         logger.info { "VehiculoController - updateVehiculo() Vehiculo: $vehiculoDto" }
@@ -80,6 +108,11 @@ class VehiculoController
         }
     }
 
+    /**
+     * Función que elimina un vehiculo
+     * @param id: Long
+     * @return ResponseEntity<Void>
+     */
     @DeleteMapping("{id}")
     suspend fun delete(@PathVariable id: Long) : ResponseEntity<Void> {
         logger.info { "VehiculoController - deleteVehiculo() with id: $id" }

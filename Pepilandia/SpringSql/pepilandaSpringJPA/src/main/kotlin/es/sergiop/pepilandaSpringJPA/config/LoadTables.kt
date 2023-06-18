@@ -8,6 +8,15 @@ import org.springframework.core.io.ClassPathResource
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
+/**
+ * Clase que se encarga de cargar las tablas de la base de datos
+ * @property initializer Inicializador de la base de datos
+ */
 @Configuration
 class LoadTables {
 

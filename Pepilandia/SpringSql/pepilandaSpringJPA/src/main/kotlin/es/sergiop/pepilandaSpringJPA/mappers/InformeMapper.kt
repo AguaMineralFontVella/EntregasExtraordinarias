@@ -4,6 +4,15 @@ import es.sergiop.pepilandaSpringJPA.dto.InformeCreateDto
 import es.sergiop.pepilandaSpringJPA.dto.InformeDto
 import es.sergiop.pepilandaSpringJPA.models.Informe
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
+/**
+ * Funcion para convertir un Informe a un InformeDto
+ * @return InformeDto
+ */
 fun Informe.toInformeDto(): InformeDto {
     return InformeDto(
         id= id,
@@ -19,6 +28,10 @@ fun Informe.toInformeDto(): InformeDto {
     )
 }
 
+/**
+ * Funcion para convertir un InformeDto a un Informe
+ * @return Informe
+ */
 fun InformeDto.toInforme(): Informe{
     return Informe(
         id= id,
@@ -34,6 +47,10 @@ fun InformeDto.toInforme(): Informe{
     )
 }
 
+/**
+ * Funcion para convertir un InformeCreateDto a un Informe
+ * @return Informe
+ */
 fun InformeCreateDto.toInforme(): Informe{
     return Informe(
         frenado= frenado.toDouble(),

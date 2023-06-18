@@ -18,8 +18,16 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
 private val logger = KotlinLogging.logger {}
 
+/**
+ * Controlador de la entidad Propietario
+ */
 @RestController
 @RequestMapping(ApiConfig.API_PATH + "/propietarios")
 class PropietarioController
@@ -27,6 +35,10 @@ class PropietarioController
     private val propietarioService: PropietarioServiceImpl
 ) {
 
+    /**
+     * Función que devuelve todos los propietarios
+     * @return ResponseEntity<List<PropietarioDto>>
+     */
     @GetMapping("")
     suspend fun findAll() : ResponseEntity<List<PropietarioDto>> {
         logger.info { "PropietarioController - findAll()" }
@@ -34,6 +46,11 @@ class PropietarioController
         return ResponseEntity.ok(res)
     }
 
+    /**
+     * Función que devuelve un propietario por su id
+     * @param id: Long
+     * @return ResponseEntity<PropietarioDto>
+     */
     @GetMapping("{id}")
     suspend fun findById(@PathVariable id: Long) : ResponseEntity<PropietarioDto> {
         logger.info { "PropietarioController - findPropietarioById() with id: $id" }
@@ -45,6 +62,11 @@ class PropietarioController
         }
     }
 
+    /**
+     * Función que crea un propietario
+     * @param propietarioCreateDto: PropietarioCreateDto
+     * @return ResponseEntity<PropietarioDto>
+     */
     @PostMapping("")
     suspend fun create(@RequestBody propietarioCreateDto: PropietarioCreateDto) : ResponseEntity<PropietarioDto> {
         logger.info { "PropietarioController - savePropietario() Propietario: $propietarioCreateDto" }
@@ -59,6 +81,12 @@ class PropietarioController
         }
     }
 
+    /**
+     * Función que actualiza un propietario
+     * @param id: Long
+     * @param propietarioDto: PropietarioDto
+     * @return ResponseEntity<PropietarioDto>
+     */
     @PutMapping("{id}")
     suspend fun update(@PathVariable id: Long, @RequestBody propietarioDto: PropietarioDto) : ResponseEntity<PropietarioDto> {
         logger.info { "PropietarioController - updatePropietario() Propietario: $propietarioDto" }
@@ -76,6 +104,11 @@ class PropietarioController
         }
     }
 
+    /**
+     * Función que elimina un propietario
+     * @param id: Long
+     * @return ResponseEntity<Boolean>
+     */
     @DeleteMapping("{id}")
     suspend fun delete(@PathVariable id: Long) : ResponseEntity<Boolean> {
         logger.info { "PropietarioController - deletePropietario() with id: $id" }

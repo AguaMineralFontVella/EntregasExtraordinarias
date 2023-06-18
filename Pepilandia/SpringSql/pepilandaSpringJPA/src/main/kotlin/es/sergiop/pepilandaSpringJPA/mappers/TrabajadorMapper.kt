@@ -6,6 +6,15 @@ import es.sergiop.pepilandaSpringJPA.models.Trabajador
 import es.sergiop.pepilandaSpringJPA.security.BCrypt.cifrar
 import java.time.LocalDate
 
+/**
+ * @author Sergio Pérez Fernández
+ * @mail sergio.perezfernandez@alumno.iesluisvives.org
+ */
+
+/**
+ * Funcion para convertir un Trabajador a un TrabajadorDto
+ * @return TrabajadorDto
+ */
 fun Trabajador.toTrabajadorDto(): TrabajadorDto {
     return TrabajadorDto(
         id = id,
@@ -21,6 +30,10 @@ fun Trabajador.toTrabajadorDto(): TrabajadorDto {
     )
 }
 
+/**
+ * Funcion para convertir un TrabajadorDto a un Trabajador
+ * @return Trabajador
+ */
 fun TrabajadorDto.toTrabajador(): Trabajador {
     return Trabajador(
         id = id,
@@ -36,6 +49,10 @@ fun TrabajadorDto.toTrabajador(): Trabajador {
     )
 }
 
+/**
+ * Funcion para convertir un TrabajadorCreateDto a un Trabajador
+ * @return Trabajador
+ */
 fun TrabajadorCreateDto.toTrabajador(): Trabajador {
     return Trabajador(
         nombre = nombre,
