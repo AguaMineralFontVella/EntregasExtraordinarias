@@ -1,0 +1,8 @@
+
+;kotlin:S6310:"Avoid hardcoded dispatchers.(Û€ö¤8Ç¡’„1
+@kotlin:S6310H"Avoid hardcoded dispatchers.(³’¢Äıÿÿÿÿ8É¡’„1
+;kotlin:S6310U"Avoid hardcoded dispatchers.(›£²·8Ë¡’„1
+@kotlin:S6310`"Avoid hardcoded dispatchers.(ÔšÓÓûÿÿÿÿ8Í¡’„1
+ukotlin:S6311H"QRemove this dispatcher. It is pointless when used with only suspending functions.(³’¢Äıÿÿÿÿ8Î¡’„1
+ukotlin:S6311`"QRemove this dispatcher. It is pointless when used with only suspending functions.(ÔšÓÓûÿÿÿÿ8Ğ¡’„1
+_kotlin:S6309:"@Functions returning "Flow" or "Channel" should not be suspending(Û€ö¤8Õ¡’„1

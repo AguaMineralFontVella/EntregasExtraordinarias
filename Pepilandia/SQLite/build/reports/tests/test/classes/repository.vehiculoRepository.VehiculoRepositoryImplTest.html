@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.124s</div>
+<div class="counter">0.100s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,42 +79,42 @@
 </thead>
 <tr>
 <td class="success">delete()</td>
-<td class="success">0.052s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">findAll()</td>
-<td class="success">0.008s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">findByDniPropietario()</td>
 <td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">findById()</td>
-<td class="success">0.011s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">findByMatricula()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">findByModelo()</td>
-<td class="success">0.008s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">save()</td>
+<td class="success">findByDniPropietario()</td>
 <td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">findById()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByMatricula()</td>
+<td class="success">0.013s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByModelo()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">save()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">update()</td>
-<td class="success">0.014s</td>
+<td class="success">0.020s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -122,11 +122,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.488 [Test worker] INFO db.DatabaseManager - Inicializando DatabaseManager
-13:36:27.494 [Test worker] INFO db.DatabaseManager - Eliminando tablas
-13:36:27.598 [Test worker] INFO db.DatabaseManager - Tablas eliminadas
-13:36:27.600 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+<pre>/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.697 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -218,24 +215,24 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.612 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.623 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.631 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.635 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.637 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.638 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.644 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.645 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.646 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
-13:36:27.648 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.652 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.652 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: DELETE FROM vehiculo WHERE id = ? con parámetros: [1]
-13:36:27.657 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.658 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.659 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
-13:36:27.659 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.669 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.705 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.706 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.706 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.706 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.708 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.708 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.712 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.714 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.714 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+05:00:05.714 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.715 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.715 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: DELETE FROM vehiculo WHERE id = ? con parámetros: [1]
+05:00:05.720 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.721 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.721 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+05:00:05.722 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.724 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -327,18 +324,18 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.678 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.679 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.680 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.680 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.681 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.681 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.684 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.686 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.686 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.686 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.689 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.730 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.730 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.731 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.731 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.733 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.733 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.738 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.740 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.740 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.740 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.742 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -430,24 +427,24 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.698 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.699 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.699 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.700 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.701 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.701 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.705 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.706 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.706 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
-13:36:27.707 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.708 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.708 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: UPDATE vehiculo SET marca = ?, modelo = ?, matricula = ?, fecha_matriculacion = ?, fecha_ultima_revision = ?, dni_propietario = ? WHERE id = ? con parámetros: [Seat, Ibiza, MAR223, 2019-01-01, 2020-01-01, 12345678B, 1]
-13:36:27.711 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.712 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.713 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
-13:36:27.713 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.716 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.750 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.750 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.750 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.751 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.752 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.752 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.757 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.759 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.759 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+05:00:05.759 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.760 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.760 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: UPDATE vehiculo SET marca = ?, modelo = ?, matricula = ?, fecha_matriculacion = ?, fecha_ultima_revision = ?, dni_propietario = ? WHERE id = ? con parámetros: [Seat, Ibiza, MAR223, 2019-01-01, 2020-01-01, 12345678B, 1]
+05:00:05.768 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.769 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.769 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+05:00:05.770 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.772 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -539,18 +536,18 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.723 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.725 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.725 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.726 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.727 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.728 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.732 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.734 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.734 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
-13:36:27.735 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.737 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.778 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.779 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.779 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.780 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.782 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.782 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.787 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.788 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.788 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+05:00:05.789 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.791 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -642,18 +639,18 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.747 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.748 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.748 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.748 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.750 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.751 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.756 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.758 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.758 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
-13:36:27.759 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.761 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.797 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.798 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.798 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.799 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.800 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.801 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.806 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.807 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.808 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE id = ? con parámetros: [1]
+05:00:05.808 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.811 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -745,18 +742,18 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.769 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.770 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.771 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.771 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.773 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.773 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.776 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.777 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.778 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE dni_propietario = ? con parámetros: [12345678A]
-13:36:27.778 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.781 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.825 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.826 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.826 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.827 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.832 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.833 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.837 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.838 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.839 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE dni_propietario = ? con parámetros: [12345678A]
+05:00:05.839 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.842 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -848,18 +845,18 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.788 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.789 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.789 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.790 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.791 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.791 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.795 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.796 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.796 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE modelo = ? con parámetros: [Ibiza]
-13:36:27.797 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-/C:/Users/Sergio/Desktop/FP/2o/Acceso_a_Datos/PracticasExtra/Pepilandia/SQLite/build/resources/main/config.properties
-13:36:27.799 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.874 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.875 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.875 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.875 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.877 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.877 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.880 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.882 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.882 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE modelo = ? con parámetros: [Ibiza]
+05:00:05.883 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+05:00:05.886 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
 --init-sql--
 DROP TABLE IF EXISTS Trabajador
 
@@ -951,16 +948,16 @@ CREATE TABLE IF NOT EXISTS Informe (
     FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
 )
 
-13:36:27.806 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
-13:36:27.807 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
-13:36:27.807 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
-13:36:27.808 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.809 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.809 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
-13:36:27.813 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
-13:36:27.815 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
-13:36:27.815 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE matricula = ? con parámetros: [2346JUT]
-13:36:27.816 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.897 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+05:00:05.898 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+05:00:05.898 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo con parámetros: []
+05:00:05.898 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.900 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.900 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO vehiculo (marca, modelo, matricula, fecha_matriculacion, fecha_ultima_revision, dni_propietario) VALUES (?, ?, ?, ?, ?, ?) con parámetros: [Seat, Ibiza, 2346JUT, 2019-01-01, 2020-01-01, 12345678A]
+05:00:05.904 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+05:00:05.906 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+05:00:05.909 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM vehiculo WHERE matricula = ? con parámetros: [2346JUT]
+05:00:05.910 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
 </pre>
 </span>
 </div>
@@ -972,7 +969,7 @@ CREATE TABLE IF NOT EXISTS Informe (
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4.2</a> at 4 jun 2023 13:36:27</p>
+<a href="http://www.gradle.org">Gradle 7.4.2</a> at 19 jun 2023 5:00:06</p>
 </div>
 </div>
 </body>

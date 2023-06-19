@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CitaControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CitaControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/controllers.html">controllers</a> &gt; CitaControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.478s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">delete()</td>
+<td class="success">0.376s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findAll()</td>
+<td class="success">0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findById()</td>
+<td class="success">0.021s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">save()</td>
+<td class="success">0.028s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">update()</td>
+<td class="success">0.033s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:48.161 [Test worker] INFO db.DatabaseManager - Inicializando DatabaseManager
+04:59:48.167 [Test worker] INFO db.DatabaseManager - Eliminando tablas
+04:59:48.303 [Test worker] INFO db.DatabaseManager - Tablas eliminadas
+04:59:48.305 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:48.321 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:48.349 [Test worker] INFO controllers.CitaController - Encontrando todas las citas
+04:59:48.351 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:48.363 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita con parámetros: []
+04:59:48.369 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.374 [Test worker] INFO controllers.CitaController - Citas encontradas: []
+04:59:48.396 [Test worker] DEBUG validators.CitaValidator - validar: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.398 [Test worker] INFO controllers.CitaController -  ? La cita es válida, guardando cita: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.402 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.405 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO cita(id_trabajador, id_vehiculo, fecha, hora) VALUES (?, ?, ?, ?) con parámetros: [1, 1, 2021-05-05, 10:00]
+04:59:48.410 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.412 [Test worker] INFO controllers.CitaController - Cita guardada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.606 [Test worker] INFO controllers.CitaController - Encontrando cita por id: 1
+04:59:48.610 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.610 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita WHERE id = ? con parámetros: [1]
+04:59:48.638 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.660 [Test worker] INFO controllers.CitaController - Cita encontrada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.663 [Test worker] INFO controllers.CitaController - Borrando cita: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.665 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.666 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: DELETE FROM cita WHERE id = ? con parámetros: [1]
+04:59:48.673 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.677 [Test worker] INFO controllers.CitaController - Cita borrada: true
+04:59:48.679 [Test worker] INFO controllers.CitaController - Encontrando cita por id: 1
+04:59:48.681 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.681 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita WHERE id = ? con parámetros: [1]
+04:59:48.682 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:48.706 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:48.722 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:48.724 [Test worker] INFO controllers.CitaController - Encontrando todas las citas
+04:59:48.724 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:48.724 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita con parámetros: []
+04:59:48.725 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.725 [Test worker] INFO controllers.CitaController - Citas encontradas: []
+04:59:48.725 [Test worker] DEBUG validators.CitaValidator - validar: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.725 [Test worker] INFO controllers.CitaController -  ? La cita es válida, guardando cita: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.728 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.729 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO cita(id_trabajador, id_vehiculo, fecha, hora) VALUES (?, ?, ?, ?) con parámetros: [1, 1, 2021-05-05, 10:00]
+04:59:48.736 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.737 [Test worker] INFO controllers.CitaController - Cita guardada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.738 [Test worker] INFO controllers.CitaController - Encontrando todas las citas
+04:59:48.740 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.740 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita con parámetros: []
+04:59:48.741 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.741 [Test worker] INFO controllers.CitaController - Citas encontradas: [Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:48.748 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:48.765 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:48.766 [Test worker] INFO controllers.CitaController - Encontrando todas las citas
+04:59:48.767 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:48.767 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita con parámetros: []
+04:59:48.767 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.768 [Test worker] INFO controllers.CitaController - Citas encontradas: []
+04:59:48.768 [Test worker] DEBUG validators.CitaValidator - validar: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.768 [Test worker] INFO controllers.CitaController -  ? La cita es válida, guardando cita: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.770 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.770 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO cita(id_trabajador, id_vehiculo, fecha, hora) VALUES (?, ?, ?, ?) con parámetros: [1, 1, 2021-05-05, 10:00]
+04:59:48.775 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.776 [Test worker] INFO controllers.CitaController - Cita guardada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.776 [Test worker] INFO controllers.CitaController - Encontrando cita por id: 1
+04:59:48.779 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.779 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita WHERE id = ? con parámetros: [1]
+04:59:48.779 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.779 [Test worker] INFO controllers.CitaController - Cita encontrada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.780 [Test worker] DEBUG validators.CitaValidator - validar: Cita(id=1, idTrabajador=2, idVehiculo=2, fecha=2022-05-05, hora=10:00)
+04:59:48.782 [Test worker] INFO controllers.CitaController -  ? La cita es válida, actualizando cita: Cita(id=1, idTrabajador=2, idVehiculo=2, fecha=2022-05-05, hora=10:00)
+04:59:48.784 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.785 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: UPDATE cita SET id_trabajador = ?, id_vehiculo = ?, fecha = ?, hora = ? WHERE id = ? con parámetros: [2, 2, 2022-05-05, 10:00, 1]
+04:59:48.790 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.794 [Test worker] INFO controllers.CitaController - Cita actualizada: Cita(id=1, idTrabajador=2, idVehiculo=2, fecha=2022-05-05, hora=10:00)
+04:59:48.794 [Test worker] INFO controllers.CitaController - Encontrando cita por id: 1
+04:59:48.796 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.797 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita WHERE id = ? con parámetros: [1]
+04:59:48.797 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.797 [Test worker] INFO controllers.CitaController - Cita encontrada: Cita(id=1, idTrabajador=2, idVehiculo=2, fecha=2022-05-05, hora=10:00)
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:48.802 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:48.814 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:48.815 [Test worker] INFO controllers.CitaController - Encontrando todas las citas
+04:59:48.815 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:48.815 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita con parámetros: []
+04:59:48.817 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.817 [Test worker] INFO controllers.CitaController - Citas encontradas: []
+04:59:48.817 [Test worker] DEBUG validators.CitaValidator - validar: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.817 [Test worker] INFO controllers.CitaController -  ? La cita es válida, guardando cita: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.821 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.822 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO cita(id_trabajador, id_vehiculo, fecha, hora) VALUES (?, ?, ?, ?) con parámetros: [1, 1, 2021-05-05, 10:00]
+04:59:48.826 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.826 [Test worker] INFO controllers.CitaController - Cita guardada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.827 [Test worker] INFO controllers.CitaController - Encontrando cita por id: 1
+04:59:48.829 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.830 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita WHERE id = ? con parámetros: [1]
+04:59:48.831 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.831 [Test worker] INFO controllers.CitaController - Cita encontrada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:48.845 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:48.860 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:48.862 [Test worker] INFO controllers.CitaController - Encontrando todas las citas
+04:59:48.862 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:48.862 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita con parámetros: []
+04:59:48.863 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.863 [Test worker] INFO controllers.CitaController - Citas encontradas: []
+04:59:48.863 [Test worker] DEBUG validators.CitaValidator - validar: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.863 [Test worker] INFO controllers.CitaController -  ? La cita es válida, guardando cita: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.874 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.874 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO cita(id_trabajador, id_vehiculo, fecha, hora) VALUES (?, ?, ?, ?) con parámetros: [1, 1, 2021-05-05, 10:00]
+04:59:48.879 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.880 [Test worker] INFO controllers.CitaController - Cita guardada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+04:59:48.880 [Test worker] INFO controllers.CitaController - Encontrando cita por id: 1
+04:59:48.886 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:48.887 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM cita WHERE id = ? con parámetros: [1]
+04:59:48.887 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:48.887 [Test worker] INFO controllers.CitaController - Cita encontrada: Cita(id=1, idTrabajador=1, idVehiculo=1, fecha=2021-05-05, hora=10:00)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4.2</a> at 19 jun 2023 5:00:06</p>
+</div>
+</div>
+</body>
+</html>

@@ -17,7 +17,7 @@ import java.time.LocalDate
  */
 data class Cita(
     @BsonId @Contextual
-    val id: String = newId<Trabajador>().toString(),
+    val id: String = newId<Cita>().toString(),
     val idTrabajador: String,
     val idVehiculo: String,
     @Serializable(with = LocalDateSerializer::class)

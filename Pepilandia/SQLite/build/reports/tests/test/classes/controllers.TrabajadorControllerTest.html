@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - TrabajadorControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>TrabajadorControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/controllers.html">controllers</a> &gt; TrabajadorControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">10</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">10</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">7.470s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="delete()"></a>
+<h3 class="failures">delete()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@5922ae77, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.delete(TrabajadorControllerTest.kt:117)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="findAll()"></a>
+<h3 class="failures">findAll()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@71f67a79, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.findAll(TrabajadorControllerTest.kt:77)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="findByEmail()"></a>
+<h3 class="failures">findByEmail()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@1494b84d, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.findByEmail(TrabajadorControllerTest.kt:41)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="findByEspecialidad()"></a>
+<h3 class="failures">findByEspecialidad()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@bc57b40, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.findByEspecialidad(TrabajadorControllerTest.kt:59)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="findById()"></a>
+<h3 class="failures">findById()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@27cf3151, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.findById(TrabajadorControllerTest.kt:86)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="findByIsResponsable()"></a>
+<h3 class="failures">findByIsResponsable()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@aa22f1c, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.findByIsResponsable(TrabajadorControllerTest.kt:68)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="findByNombreUsuario()"></a>
+<h3 class="failures">findByNombreUsuario()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@60094a13, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.findByNombreUsuario(TrabajadorControllerTest.kt:50)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="findByTelefono()"></a>
+<h3 class="failures">findByTelefono()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@21362712, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.findByTelefono(TrabajadorControllerTest.kt:32)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="save()"></a>
+<h3 class="failures">save()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@4108fa66, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.save(TrabajadorControllerTest.kt:95)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="update()"></a>
+<h3 class="failures">update()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt; but was: &lt;Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@7889a1ac, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at app//controllers.TrabajadorControllerTest.update(TrabajadorControllerTest.kt:104)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">delete()</td>
+<td class="failures">0.761s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">findAll()</td>
+<td class="failures">0.779s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">findByEmail()</td>
+<td class="failures">0.623s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">findByEspecialidad()</td>
+<td class="failures">0.590s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">findById()</td>
+<td class="failures">0.636s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">findByIsResponsable()</td>
+<td class="failures">0.974s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">findByNombreUsuario()</td>
+<td class="failures">1.285s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">findByTelefono()</td>
+<td class="failures">0.567s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">save()</td>
+<td class="failures">0.619s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">update()</td>
+<td class="failures">0.636s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:50.058 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:50.080 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:50.094 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:50.095 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:50.096 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:50.096 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:50.177 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:50.179 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:50.180 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:50.183 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:50.194 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:50.204 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:50.205 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:50.222 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:50.225 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:50.225 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:50.228 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:50.228 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:51.354 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:51.362 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@60094a13, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:51.369 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:51.377 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:51.378 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:51.378 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:51.379 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:51.379 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:51.379 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:51.381 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:51.384 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:51.385 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:51.385 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:51.387 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:51.388 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:51.394 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:51.394 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:51.394 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:51.396 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:51.396 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:52.351 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:52.351 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@aa22f1c, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:52.356 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:52.372 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:52.374 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:52.375 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:52.375 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:52.376 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:52.376 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:52.378 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:52.379 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:52.379 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:52.379 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:52.381 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:52.381 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:52.395 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:52.396 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:52.396 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:52.399 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:52.399 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:53.132 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.132 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@5922ae77, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:53.139 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:53.155 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:53.156 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:53.157 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:53.157 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:53.157 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.157 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:53.159 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:53.160 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:53.160 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.160 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:53.162 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:53.162 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:53.167 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.168 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:53.168 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:53.170 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:53.170 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:53.933 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.933 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@71f67a79, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:53.940 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:53.950 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:53.952 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:53.954 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:53.954 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:53.954 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.954 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:53.957 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:53.958 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:53.958 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.958 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:53.960 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:53.960 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:53.967 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:53.967 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:53.967 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:53.969 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:53.970 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:54.587 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:54.587 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@7889a1ac, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:54.590 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:54.605 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:54.606 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:54.606 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:54.606 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:54.607 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:54.607 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:54.609 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:54.609 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:54.609 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:54.609 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:54.611 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:54.611 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:54.616 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:54.616 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:54.616 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:54.617 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:54.617 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:55.240 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.241 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@27cf3151, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:55.244 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:55.255 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:55.256 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:55.256 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:55.256 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:55.257 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.257 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:55.259 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:55.259 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:55.259 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.259 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:55.260 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:55.261 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:55.266 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.266 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:55.266 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:55.268 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:55.268 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:55.874 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.875 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@4108fa66, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:55.878 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:55.887 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:55.887 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:55.888 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:55.888 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:55.888 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.888 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:55.890 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:55.890 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:55.891 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.891 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:55.893 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:55.893 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:55.900 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:55.901 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:55.902 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:55.905 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:55.905 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:56.453 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:56.453 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@21362712, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:56.457 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:56.491 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:56.492 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:56.492 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:56.492 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:56.493 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:56.493 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:56.495 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:56.495 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:56.495 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:56.495 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:56.497 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:56.497 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:56.518 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:56.519 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:56.519 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:56.521 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:56.521 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:57.081 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:57.082 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@bc57b40, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:57.085 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:57.106 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:57.107 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:57.107 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:57.107 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:57.108 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:57.108 [Test worker] DEBUG validators.TrabajadorValidator - Validando: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:57.109 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:57.109 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:57.109 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:57.109 [Test worker] INFO controllers.TrabajadorController -  ? El trabajador es válido, guardando trabajador: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:57.110 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:57.111 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO trabajador(nombre, telefono, email, nombreUsuario, password, especialidad_trabajador, isResponsable, salario, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [Pepe, 667483324, TRABAJADOR1@gmail.com, Pepe667, [B@3a94964, ELECTRICIDAD, true, 2800.0, 2021-01-01]
+04:59:57.116 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:57.117 [Test worker] INFO controllers.TrabajadorController - Trabajador guardado: Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@3a94964, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)
+04:59:57.117 [Test worker] INFO controllers.TrabajadorController - Encontrando todos los trabajadores
+04:59:57.119 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:57.119 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM trabajador con parámetros: []
+04:59:57.729 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:57.729 [Test worker] INFO controllers.TrabajadorController - Trabajadores encontrados: [Trabajador(id=1, nombre=Pepe, telefono=667483324, email=TRABAJADOR1@gmail.com, nombreUsuario=Pepe667, password=[B@1494b84d, especialidad=ELECTRICIDAD, isResponsable=true, salario=2800.0, fechaContratacion=2021-01-01)]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4.2</a> at 19 jun 2023 5:00:06</p>
+</div>
+</div>
+</body>
+</html>

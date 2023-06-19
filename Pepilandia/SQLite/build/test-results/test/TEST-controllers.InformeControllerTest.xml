@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controllers.InformeControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-06-19T02:59:48" hostname="LAPTOPAMEBA" time="0.552">
+  <properties/>
+  <testcase name="delete()" classname="controllers.InformeControllerTest" time="0.163"/>
+  <testcase name="findAll()" classname="controllers.InformeControllerTest" time="0.043"/>
+  <testcase name="update()" classname="controllers.InformeControllerTest" time="0.047"/>
+  <testcase name="findById()" classname="controllers.InformeControllerTest" time="0.017"/>
+  <testcase name="findByIsFavorable()" classname="controllers.InformeControllerTest" time="0.031"/>
+  <testcase name="save()" classname="controllers.InformeControllerTest" time="0.031"/>
+  <system-out><![CDATA[/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:48.907 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:48.957 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:48.973 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:48.973 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:48.973 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:48.974 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.025 [Test worker] DEBUG validators.InformeValidator - validar: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.041 [Test worker] INFO controllers.InformeController -  ? El informe es válido, guardando informe: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.046 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.046 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO informe (frenado, frenadoIsApto, contaminacion, lucesIsApto, id_cita, id_trabajador, id_vehiculo, dni_propietario, isFavorable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [2.0, true, 33.0, true, 2, 2, 2, 12345678A, 1]
+04:59:49.052 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.054 [Test worker] INFO controllers.InformeController - Informe guardado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.062 [Test worker] INFO controllers.InformeController - Encontrando informe por id: 1
+04:59:49.067 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.067 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe WHERE id = ? con parámetros: [1]
+04:59:49.079 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.083 [Test worker] INFO controllers.InformeController - Informe encontrado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.096 [Test worker] INFO controllers.InformeController - Borrando informe: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.106 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.106 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: DELETE FROM informe WHERE id = ? con parámetros: [1]
+04:59:49.111 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.113 [Test worker] INFO controllers.InformeController - Informe borrado: true
+04:59:49.113 [Test worker] INFO controllers.InformeController - Encontrando informe por id: 1
+04:59:49.119 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.119 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe WHERE id = ? con parámetros: [1]
+04:59:49.120 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:49.131 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:49.160 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:49.161 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:49.162 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:49.163 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:49.168 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.169 [Test worker] DEBUG validators.InformeValidator - validar: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.170 [Test worker] INFO controllers.InformeController -  ? El informe es válido, guardando informe: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.173 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.173 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO informe (frenado, frenadoIsApto, contaminacion, lucesIsApto, id_cita, id_trabajador, id_vehiculo, dni_propietario, isFavorable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [2.0, true, 33.0, true, 2, 2, 2, 12345678A, 1]
+04:59:49.188 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.190 [Test worker] INFO controllers.InformeController - Informe guardado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.190 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:49.195 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.195 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:49.195 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.202 [Test worker] INFO controllers.InformeController - Informes encontrados: [Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:49.211 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:49.246 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:49.251 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:49.252 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:49.252 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:49.252 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.252 [Test worker] DEBUG validators.InformeValidator - validar: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.252 [Test worker] INFO controllers.InformeController -  ? El informe es válido, guardando informe: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.256 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.256 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO informe (frenado, frenadoIsApto, contaminacion, lucesIsApto, id_cita, id_trabajador, id_vehiculo, dni_propietario, isFavorable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [2.0, true, 33.0, true, 2, 2, 2, 12345678A, 1]
+04:59:49.262 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.262 [Test worker] INFO controllers.InformeController - Informe guardado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.263 [Test worker] INFO controllers.InformeController - Encontrando informe por id: 1
+04:59:49.271 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.271 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe WHERE id = ? con parámetros: [1]
+04:59:49.272 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.272 [Test worker] INFO controllers.InformeController - Informe encontrado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.273 [Test worker] DEBUG validators.InformeValidator - validar: Informe(id=1, frenado=6.0, frenadoIsApto=true, contaminacion=38.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.275 [Test worker] INFO controllers.InformeController -  ? El informe es válido, actualizando informe: Informe(id=1, frenado=6.0, frenadoIsApto=true, contaminacion=38.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.277 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.278 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: UPDATE informe SET frenado = ?, frenadoIsApto = ?, contaminacion = ?, lucesIsApto = ?, id_cita = ?, id_trabajador = ?, id_vehiculo = ?, dni_propietario = ?, isFavorable = ? WHERE id = ? con parámetros: [6.0, true, 38.0, true, 2, 2, 2, 12345678A, 1, 1]
+04:59:49.284 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.289 [Test worker] INFO controllers.InformeController - Informe actualizado: Informe(id=1, frenado=6.0, frenadoIsApto=true, contaminacion=38.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.292 [Test worker] INFO controllers.InformeController - Encontrando informe por id: 1
+04:59:49.295 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.295 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe WHERE id = ? con parámetros: [1]
+04:59:49.296 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.296 [Test worker] INFO controllers.InformeController - Informe encontrado: Informe(id=1, frenado=6.0, frenadoIsApto=true, contaminacion=38.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:49.303 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:49.351 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:49.352 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:49.352 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:49.353 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:49.354 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.354 [Test worker] DEBUG validators.InformeValidator - validar: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.354 [Test worker] INFO controllers.InformeController -  ? El informe es válido, guardando informe: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.356 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.357 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO informe (frenado, frenadoIsApto, contaminacion, lucesIsApto, id_cita, id_trabajador, id_vehiculo, dni_propietario, isFavorable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [2.0, true, 33.0, true, 2, 2, 2, 12345678A, 1]
+04:59:49.362 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.362 [Test worker] INFO controllers.InformeController - Informe guardado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.363 [Test worker] INFO controllers.InformeController - Encontrando informe por id: 1
+04:59:49.367 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.368 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe WHERE id = ? con parámetros: [1]
+04:59:49.368 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.368 [Test worker] INFO controllers.InformeController - Informe encontrado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:49.381 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:49.406 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:49.407 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:49.407 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:49.407 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:49.408 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.409 [Test worker] DEBUG validators.InformeValidator - validar: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.409 [Test worker] INFO controllers.InformeController -  ? El informe es válido, guardando informe: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.413 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.414 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO informe (frenado, frenadoIsApto, contaminacion, lucesIsApto, id_cita, id_trabajador, id_vehiculo, dni_propietario, isFavorable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [2.0, true, 33.0, true, 2, 2, 2, 12345678A, 1]
+04:59:49.428 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.428 [Test worker] INFO controllers.InformeController - Informe guardado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.429 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:49.435 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.435 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:49.436 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.436 [Test worker] INFO controllers.InformeController - Informes encontrados: [Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)]
+/C:/Users/Sergio/Desktop/FP/2o/EntregasExtraordinarias/Pepilandia/SQLite/build/resources/main/config.properties
+04:59:49.458 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+--init-sql--
+DROP TABLE IF EXISTS Trabajador
+
+DROP TABLE IF EXISTS Informe
+
+DROP TABLE IF EXISTS Especialidad
+
+DROP TABLE IF EXISTS Propietario
+
+DROP TABLE IF EXISTS Vehiculo
+
+DROP TABLE IF EXISTS Cita
+
+-- Tabla Especialidad
+CREATE TABLE IF NOT EXISTS Especialidad (
+    nombre VARCHAR(20) PRIMARY KEY,
+    salario_base DECIMAL(10, 2)
+)
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (nombre, salario_base) VALUES
+    ('ELECTRICIDAD', 1800),
+    ('MOTOR', 1700),
+    ('MECANICA', 1600),
+    ('INTERIOR', 1750)
+
+-- Tabla Propietario
+CREATE TABLE Propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni VARCHAR(9),
+    nombre VARCHAR(30),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20)
+)
+
+-- Tabla Vehiculo
+CREATE TABLE IF NOT EXISTS Vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    matricula VARCHAR(10),
+    fecha_matriculacion DATE,
+    fecha_ultima_revision DATE,
+    dni_propietario VARCHAR(9),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+-- Tabla Trabajador
+CREATE TABLE IF NOT EXISTS Trabajador (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(30),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    nombreUsuario VARCHAR(20),
+    password VARCHAR(100),
+    especialidad_trabajador VARCHAR(20),
+    isResponsable INTEGER,
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE,
+    FOREIGN KEY (especialidad_trabajador) REFERENCES Especialidad(nombre)
+)
+
+-- Tabla Cita
+CREATE TABLE IF NOT EXISTS Cita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_trabajador INTEGER,
+    id_vehiculo INTEGER,
+    fecha DATETIME,
+    hora VARCHAR(5),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id)
+)
+
+-- Tabla Informe
+CREATE TABLE IF NOT EXISTS Informe (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    frenado DECIMAL(2, 2),
+    frenadoIsApto INTEGER,
+    contaminacion DECIMAL(2, 2),
+    lucesIsApto INTEGER,
+    id_cita INTEGER,
+    id_trabajador INTEGER,
+    id_vehiculo INT,
+    dni_propietario VARCHAR(9),
+    isFavorable INTEGER,
+    FOREIGN KEY (id_cita) REFERENCES Cita(id),
+    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id),
+    FOREIGN KEY (id_vehiculo) REFERENCES Vehiculo(id),
+    FOREIGN KEY (dni_propietario) REFERENCES Propietario(dni)
+)
+
+04:59:49.478 [Test worker] INFO db.DatabaseManager - Datos iniciales cargados
+04:59:49.480 [Test worker] INFO controllers.InformeController - Encontrando todos los informes
+04:59:49.480 [Test worker] DEBUG db.DatabaseManager - Conexión a la Base de Datos ya establecida
+04:59:49.481 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe con parámetros: []
+04:59:49.483 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.484 [Test worker] DEBUG validators.InformeValidator - validar: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.485 [Test worker] INFO controllers.InformeController -  ? El informe es válido, guardando informe: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.489 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.490 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: INSERT INTO informe (frenado, frenadoIsApto, contaminacion, lucesIsApto, id_cita, id_trabajador, id_vehiculo, dni_propietario, isFavorable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) con parámetros: [2.0, true, 33.0, true, 2, 2, 2, 12345678A, 1]
+04:59:49.497 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.498 [Test worker] INFO controllers.InformeController - Informe guardado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+04:59:49.498 [Test worker] INFO controllers.InformeController - Encontrando informe por id: 1
+04:59:49.502 [Test worker] INFO db.DatabaseManager - Conexión establecida con la base de datos: jdbc:sqlite:Pepilandia.db
+04:59:49.505 [Test worker] INFO db.DatabaseManager - Ejecutando consulta: SELECT * FROM informe WHERE id = ? con parámetros: [1]
+04:59:49.505 [Test worker] INFO db.DatabaseManager - Conexión con la base de datos cerrada
+04:59:49.506 [Test worker] INFO controllers.InformeController - Informe encontrado: Informe(id=1, frenado=2.0, frenadoIsApto=true, contaminacion=33.0, lucesIsApto=true, idCita=2, idTrabajador=2, idVehiculo=2, dniPropietario=12345678A, isFavorable=1)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

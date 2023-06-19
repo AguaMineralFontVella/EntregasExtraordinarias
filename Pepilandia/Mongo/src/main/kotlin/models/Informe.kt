@@ -24,7 +24,7 @@ import org.litote.kmongo.newId
  */
 data class Informe(
     @BsonId @Contextual
-    val id: String = newId<Trabajador>().toString(),
+    val id: String = newId<Informe>().toString(),
     val frenado: Double,
     val frenadoIsApto: Boolean,
     val contaminacion: Double,

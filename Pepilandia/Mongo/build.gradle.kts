@@ -42,9 +42,6 @@ dependencies {
     //Cache 4k
     implementation("io.github.reactivecircus.cache4k:cache4k:0.9.0")
 
-    //JWT
-    implementation("com.auth0:java-jwt:4.4.0")
-
 }
 
 tasks.test {
