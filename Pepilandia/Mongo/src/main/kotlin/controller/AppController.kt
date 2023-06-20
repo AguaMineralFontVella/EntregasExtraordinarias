@@ -80,7 +80,7 @@ class AppController(
 
         val listaTrabajadores = trabajadorController.findAllTrabajador()?.toList()
         val listaVehiculos = vehiculoController.findAllVehiculo()?.toList()
-        var listaTrabajadoresMutable: MutableList<Trabajador> = mutableListOf()
+        val listaTrabajadoresMutable: MutableList<Trabajador> = mutableListOf()
 
         repeat(8){
             logger.info { "Creando cita..." }

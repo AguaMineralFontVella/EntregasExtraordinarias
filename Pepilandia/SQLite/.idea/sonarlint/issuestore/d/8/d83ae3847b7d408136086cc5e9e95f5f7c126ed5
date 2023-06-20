@@ -1,5 +1,0 @@
-
-Jkotlin:S1172"-Remove this unused function parameter "args".(¥å¥ûÿÿÿÿ
-mkotlin:S6558H"URemove this it parameter declaration or give this lambda parameter a meaningful name.(£öêõ
-rkotlin:S6306‰"TUsing "GlobalScope" here leads to the breaking of structured concurrency principles.(ƒ§ƒ¥ûÿÿÿÿ
-okotlin:S3776"RRefactor this method to reduce its Cognitive Complexity from 57 to the 15 allowed.(¥å¥ûÿÿÿÿ
